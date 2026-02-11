@@ -78,10 +78,10 @@ impl SimpleComponent for UIModel {
         window.set_keyboard_mode(KeyboardMode::None);
 
         let anchors = [
-            (Edge::Left, false),
-            (Edge::Right, false),
-            (Edge::Top, false),
-            (Edge::Bottom, true),
+            (Edge::Left, true),
+            (Edge::Right, true),
+            (Edge::Top, true),
+            (Edge::Bottom, false),
         ];
 
         for (anchor, state) in anchors {
