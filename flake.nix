@@ -76,7 +76,7 @@
             craneLib = (inputs.crane.mkLib pkgs).overrideToolchain (
               pkgs: pkgs.rust-bin.${rustChannel}.${rustVersion}.${rustProfile}
             );
-            commonArgs = {
+            commonArgs = (craneLib.crateNameFromCargoToml { cargoToml = ./wkeys/Cargo.toml; }) // {
               # Depending on your code base, you may have to customize the
               # source filtering to include non-standard files during the build.
               # See
